@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>아이프레임 실습</title>
+    </head>
+    <body>
+        <!--
+            <iframe>
+                - 현재 문서 안에 다른 HTML 페이지를 삽입할 수 있는 태그
+                - src 속성에 원하는 HTML문서나 URL을 넣을 수 있다.
+                - 불러온 외부 페이지의 영향을 받을 수 있다.
+                - name 속성을 지정하면, <a> 태그의 target 속성을 사용해 iframe에서 문서 또는 URL이 열리게 할 수 있다.
+        -->
+
+        <!-- <iframe src = "index4.html">
+            브라우저가 아이프레임을 지원하지 않습니다.
+        </iframe> -->
+
+        <iframe name = "sample" src = "https://example.com/"></iframe>
+
+        <a href="index4.html" target="sample">리스트 실습</a>
+        <a href="index3.html" target="sample">테이블 실습</a>
+        <a href="index2.html" target="sample">태그 실습</a>
+    </body>
+</html>

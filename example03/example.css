@@ -1,0 +1,40 @@
+/*
+    미디어 쿼리
+        - 기기의 유형과, 어떤 특성이나 수치에 따라 스타일을 수정할 수 있다.
+        - @media로 시작한다.
+        - 기기 유형
+            - all: 모든 장치
+            - print: 인쇄 결과물 및 출력 미리보기
+            - screen: 화면
+        - 규칙
+            - 뷰포트 너비 (가장 많이 사용)
+            - 뷰포트의 가로세로비 등
+        - 주의 사항
+            1) 레이아웃의 고정 크기의 사용 지양
+                - max-width를 사용한 최대 너비와 min-height를 사용한 최소 높이를 적극 활용할 것
+            2) 인라인 스타일은 반응형을 처리할 수 없다.
+*/
+div {
+    font-size: 20px;
+    background-color: aqua;
+}
+
+/* @media 기기유형 연산자 (조건) {
+    콘텐츠
+} */
+
+/* 디폴트로 all and가 붙어있어서 생략 가능 */
+@media all and (max-width: 1024px) {
+    div {
+        font-size: 30px;
+        background-color: black;
+    }
+}
+
+/* 768px 이상 ~ 1024px 이하인 구간에서 적용 */
+@media all and (min-width: 768px) and (max-width:1024px) {
+    div {
+        font-size: 30px;
+        background-color: black;
+    }
+}

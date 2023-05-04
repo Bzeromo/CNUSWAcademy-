@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8"> 
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- 반응형 페이지를 만들기 위한 메타 태그 viewport -->
+        <!-- device-width 속성은 페이지 내 요소를 브라우저 너비에 맞춰줌 -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="example.css">
+        <link rel="stylesheet" href="media.css" media="(max-width: 1024px)">
+        <title>반응형 실습</title>
+    </head>
+    <body>
+        <!-- 반응형 이미지 사용 예시 -->
+        <picture>
+            <source media="(max-width:560px)" srcset="https://via.placeholder.com/200x200?text=mobile"/>
+            <img src="https://via.placeholder.com/200x200?text=pc" alt="PC용 이미지">
+        </picture>
+
+        <div>박스!</div>
+    </body>
+</html>

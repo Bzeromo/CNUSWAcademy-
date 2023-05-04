@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>양식 태그 실습</title>
+    </head>
+    <body>
+        <!--
+            <form>
+                - 정보를 제출하기 위한 태그
+                - 정보를 입력하고 선택할 수 있는 input, selectbox, textarea 등을 가질 수 있다.
+                - 정보를 제출하기 위한 button을 가진다.
+                - action 속성으로 정보가 제출되었을 때 페이지를 이동시킬 수 있다.
+                - method 속성으로 정보가 제출될 때 처리 방식을 결정할 수 있다.
+
+            <label>
+                - input, textarea, selectbox의 설명을 작성할 수 있는 태그
+                - for 속성을 사용하여 연결하고자 하는 태그에 "id" 속성을 지정하면 label을 클릭했을 때 연결된 태그가 선택됨
+                - label 태그 안에 input을 넣으면 자동으로 for -> id 연결과 같은 처리를 함
+                - id 속성은 값 중복 절대 불가능
+            
+            <input>
+                - 사용자에게 데이터를 입력 받을 수 있는 대회형 태그
+                - type 속성의 값에 따라 받을 수 있는 input의 유형이 달라짐
+                - value 속성을 사용해 기본 내용을 입력해둘 수 있음
+                - name 속성을 사용해 input의 이름을 지정할 수 있음
+                - input 타입의 종류
+                   1) checkbox: 약관
+                   2) radio: 선택지
+                   3) file: 사진 첨부
+                   4) button: value 속성에 입력된 값을 이름으로 갖는 버튼으로 만듦
+                   5) hidden: 시각적으로 숨겨져 있는데 정보 제출 시 value에 입력된 값은 전송됨
+
+            <select>
+                - 옵션 메뉴를 제공하는 태그
+                - option 태그를 사용해 옵션을 정의할 수 있음
+                - value 속성을 선언하지 않은 경우 콘텐츠가 기본 값이 됨
+                - placeholder 속성 사용 불가
+            
+            <textarea>
+                - 여러 줄을 입력할 수 있는 대화형 태그
+                - 콘텐츠를 넣으면 사용자가 입력하지 않아도 표시되는 기본값이 됨
+                - cols/rows 속성으로 기본 너비와 높이 지정이 가능, 글자 크기 기준으로 정의
+
+            공통 속성
+                - readonly: 사용자가 수정할 수 없는 읽기 전용으로 만든다
+                - required: form이 제출될 때 필수 입력 사항으로 만든다. 필수 입력에 대한 안내 문구, 행동 등은 브라우저가 자동으로 처리해준다.
+                - placeholder: input, textarea에 부가 설명을 입력해둘 수 있다.
+                - disabled: 요소가 비활성화 되며 정보 제출 시 값이 제출되지 않는다.
+
+            <button>
+                - 클릭 가능한 버튼을 태그로 form 태그 내에 어디서든 사용할 수 있다.
+                - type을 reset으로 지정하면 버튼이 눌리면 입력한 양식이 모두 초기화 된다.
+                - submit으로 지정하면 form 양식을 제출할 수 있다. 이것은 디폴트.
+                - button 태그 내 콘텐츠에 태그의 입력이 가능하나, 블록 레벨 태그는 사용해서는 안된다.
+        -->
+
+        <form action="index6-result.html" method="get"> <!--get은 주소에 input 값이 달라붙어서 보이지만 post는 보이지 않는다-->
+            <label for ="username">아이디</label>
+            <input id="username" name="id" type="text" placeholder="아이디를 입력하세요." readonly>
+            <label>
+                비밀번호
+                <input name="password" type="password" value="비밀번호" disabled>
+            </label>
+            <br>
+            <br>
+            <label for="option">옵션 선택</label>
+            <select id = "option" name="opt" required>
+                <option value="">선택하세요</option> <!--required는 값을 요구하는데 디폴트로 값이 넘어가지 않도록 value를 비워놓는다-->
+                <option>옵션 1</option>
+                <option value="option2-값">옵션 2</option>
+                <option>옵션 3</option>
+                <option>옵션 4</option>
+            </select>
+
+            <input id="agree" type="checkbox" value="true" name="checkbox" required>
+            <label for="agree">약관에 동의합니다.</label>
+
+            <!--name이 동일하면 중복 체크가 안됨-->
+            <input type="radio" name="number" value="1" required>1
+            <input type="radio" name="number" value="2" required>2
+            <input type="radio" name="number" value="3" required>3
+            <input type="radio" name="number" value="4" required>4
+
+            <input type="file">
+
+            <input type="button" value="나는 버튼!">
+
+            <input type="hidden" name="hiddentype" value="wow">
+
+            <textarea name="" id="" cols="30" rows="10">안녕하세요!</textarea> <!--줄바꿈도 들어감-->
+
+            <button type="submit">전송</button> <!--디폴트는 submit-->
+        </form>
+    </body>
+</html>

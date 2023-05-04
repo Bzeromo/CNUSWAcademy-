@@ -1,0 +1,173 @@
+
+/*
+    전체 선택자 (*)
+        - 모든 요소에 스타일을 적용할 수 있는 선택자
+    
+    유형(태그) 선택자
+        - 같은 이름의 HTML 태그를 모두 선택
+
+    ID, Class 선택자
+        - ID는 "#"을 시작으로 선택
+        - Class는 "."을 시작으로 선택
+        - ID 값 중복 금지
+
+    속성 선택자
+        - 요소가 가진 속성을 선택자로 한다.
+        - 대괄호 안에 속성 이름을 넣어 선택자로 사용할 수 있다.
+        - 속성과 값을 동시에 입력하면 값까지 동일한 요소를 선택할 수 있다.
+        - 대괄호 앞에 태그명을 붙이면 좀 더 강력하게 선택자를 제한할 수 있다.
+
+    의사(가상) 클래스
+        - 기존 선택자에 추가하는 특별한 상태를 선택하는 선택자
+        - 1) :hover (마우스를 올리면 적용)
+          2) :focus (탭 키로 이동시 focus됨)
+          3) :first-child (리스트의 첫번째 요소만 선택)
+          4) :nth-child(n) (n번째 요소를 선택)
+
+    의사(가상) 요소
+        - 기존 선택자에 추가하는 선택한 요소의 일부를 스타일링 하는 선택자
+        - 1) ::before (요소의 앞에 의사요소를 생성)
+          2) ::after (요소의 뒤에 의사요소를 생성)
+          3) ::placeholder (input 태그의 placeholder 속성을 스타일링)
+*/
+
+/* 
+* {
+    color: rebeccapurple;
+} 
+*/
+
+/* 
+body {
+    color: red;
+}
+
+
+div {
+     color: aqua;
+}
+     주석 안에 주석을 넣을 수 없음
+     이 주석 역시 노출될 수 있으므로 중요한 정보는 넣어선 안됨*/
+
+
+
+/* #first-ul {
+    color: rgb(75, 29, 57);
+}
+
+.second-ul{
+    color: blue;
+} */
+
+/* [href] {
+    color: red;
+}
+
+[href="https://naver.com"] {
+    color: antiquewhite;
+} */
+
+/* a[target="_blank"] {
+    color: rgb(115, 149, 172);
+}
+
+a:hover {
+    color: aqua;
+}
+
+ul li:first-child {
+    color: bisque;
+}
+
+a[target="_blank"]::before {
+    content: ' (새 창)';
+} */
+
+/*
+    상속
+        - 부모 요소의 스타일 값을 이어받아 자식 요소에 적용하는 것
+        - CSS 셀렉터를 2개 이상 잡은 것을 자손 결합자라고 한다
+        - inherit
+
+    초기화
+        - 브라우저가 지정한 속성의 초기값을 요소에 적용한다.
+        - initaial
+*/
+
+/* h2{
+    color:red;
+}
+
+div {
+    color: aliceblue;
+}
+
+div h2 { */
+    /*color: inherit;*/
+    /* color: initial;
+} */
+
+/*
+    자손 결합자
+        - 앞 셀렉터의 직계 자식 요소를 선택
+        - 하나만 하려면 > 기호
+
+    인접 형제 결합자
+        - 앞 셀렉터의 바로 다음에 위치한 형제 요소 선택
+        - + 기호
+
+    일반 형제 결합자
+        - 앞 셀렉터의 다음에 위치한 모든 형제 요소를 선택
+        - ~ 기호
+*/
+
+div .foo {
+    color: rgb(88, 122, 153);
+    /* background: #ddd url('url') no-repeat center center / contain auto; */
+}
+
+/*
+    우선순위 (명시도)
+     - 작성 순서, 결합, 선택자에 따라 우선순위는 변경된다.
+     - 내려갈수록 높은 순서
+     1. 유형 선택자 및 의사 요소
+     2. Class 선택자, 속성 선택자, 의사 클래스
+     3. id 선택자
+     4. inline CSS
+
+     !important 사용으로 최우선으로 바꿀수 있음
+     지양하는 것이 좋다
+*/
+
+/*
+    콘텐츠 길이 + padding + border + margin
+*/
+div {
+    width: 300px;
+    height: 100px;
+    background-color: #ddd;
+    padding: 10px;
+
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    border-bottom-style: dashed;
+    border-color: rgb(150, 95, 24);
+
+    box-sizing: border-box;
+    /*
+        borderbox를 지정하여 컨텐츠의 영역을 테두리와 마진이 가져간다.
+        편한 디자인을 위해 이를 추천
+    */
+
+    opacity: 0.75;
+
+    overflow: scroll; /* 스크롤, hidden, visible, auto(필요한 스크롤만 띄움) */
+    overflow-x: hidden; /* x축만 숨기기 */
+}
+
+p {
+    opacity: 0.8;
+    /*
+    opacity는 자식에게 상속되지 않는다
+    */
+}

@@ -1,0 +1,28 @@
+/*
+    display
+    - 요소를 블록, 인라인에 대한 처리의 선택과 자식 요소를 배치하는 레이아웃을 설정할 수 있다.
+    visivility
+    - 공간만 차지하고 보이지 않게하기
+    float
+    - 문맥의 흐름으로부터 빠져 죄우측에 배치되는 속성
+*/
+
+/* div {
+    display: inline;
+} */
+
+.wrapper {
+    position: relative; /* fixed는 스크롤바를 따라다님 */
+    margin-left: 432px;
+    height:500vh;
+}
+
+.content1 {
+    position: sticky; /* 내려가다 스크롤바에 달라붙는다 */
+    top: 40px;
+}
+
+.content2 {
+    position: absolute; /* 부모의 영향을 많이 받는다 */
+    top: 100px;
+}

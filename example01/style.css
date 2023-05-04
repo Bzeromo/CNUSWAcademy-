@@ -1,0 +1,13 @@
+body {
+    text-align: center;
+}
+
+span {
+    padding-left: 10px;
+    padding-top: 100000px; 
+}
+
+div {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}

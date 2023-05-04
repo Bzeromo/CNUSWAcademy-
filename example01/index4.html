@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>테이블 실습</title>
+    </head>
+    <body>
+        <!--
+            <table>
+                - 표를 만드는 태그
+                - <tr> 태그로 행을 구분할 수 있다. (row)
+                - <td> 태그로 열을 생성할 수 있다. (cell)
+            <th>
+                - 열의 제목 태그
+                - bold 처리 되며 가운데 정렬이 이루어짐
+            <thead>
+                - 제목 그룹 태그
+                - 열 제목의 행을 넣어 그룹을 지을 수 있음
+                - header와 비슷하지만 header처럼 여러번 사용해서는 안됨
+            <tbody>
+                - 표 본문 요소 태그
+                - 여러번 사용 불가능
+            <tfoot>
+                - 표 바닥글 요소 태그
+                - 합계 등
+                - html4에서는 tfoot가 tbody보다 먼저 나와야 하지만 이후 버전은 아님
+            <caption>
+                - 표 설명 태그
+                - 표가 가진 데이터에 대한 설명
+        -->
+
+        <table>
+            <thead>
+                <tr>
+                 <th>셀 제목</th>
+                 <th>셀 제목</th>
+                 <th>셀 제목</th>
+                </tr>
+            </thead>
+
+            <tbody>
+             <tr>
+                    <td colspan="2">셀</td>
+                    <td>셀</td>
+                </tr>
+                <tr>
+                    <td>셀</td>
+                    <td>셀</td>
+                    <td>셀</td>
+                </tr>
+                <tr>
+                    <td>셀</td>
+                    <td>셀</td>
+                    <td>셀</td>
+                </tr>
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <td>마지막</td>
+                    <td>tfoot</td>
+                </tr>
+            </tfoot>
+        </table>
+    </body>
+</html>
