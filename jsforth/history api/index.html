@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>history</title>
+</head>
+<body>
+    <div id="container"></div>
+    <a class="LinkItem" href="/product-list">product list</a>
+    <a class="LinkItem" href="/article-list">article list</a>
+    <script>
+        function route() {
+            const {pathname} = location
+            const $container = document.querySelector('#container')
+                if(pathname === '/') {
+                    $container.innerHTML = '<h1>Home</h1>'
+                } else if(pathname ==='/product-list') {
+                    $container.innerHTML = '<h1>상품 목록</h1>'
+                } else if(pathname === '/article-list') {
+                    $container.innerHTML = '<h1>게시글 목록</h1>'
+                }
+        }
+        route() // 현재 path를 보고 url 처리
+        window.addEventListener('click', e => {
+            if(e.target.className ==='LinkItem') {
+                e.preventDefault();
+                
+                const {href} = e.target
+                const path = href.replace(window.location.origin, '') // location 중 origin 제거
+
+                history.pushState(null, null, path)
+                route() // 이벤트 발생 시 url 처리
+            }
+        })
+        window.addEventListener('popstate', () => route()) // 뒤로 가기나 앞으로 가기로는 클릭이 아니기 때문에 route()가 출력 되지 않아 이런 식으로 따로 지정해줘야한다.
+    </script>
+</body>
+</html>

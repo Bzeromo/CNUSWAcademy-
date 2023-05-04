@@ -1,0 +1,36 @@
+업그레이드 TodoApp
+1) users api를 통해 사용자 목록을 그리고, 클릭하면 해당 사용자의 todo 목록을 가져오기
+2) 할 일을 추가하면 화면에 추가되고, API 호출을 통해 서버에도 추가되고
+3) TODO를 추가하고 삭제하는 동안 낙관적 업데이트를 사용 (하지만 흐름상 사용 한번만 해보고 코드 삭제 예정)
+(! 낙관적 업데이트: 서버 요청 성공을 낙관적으로 가정하고 서버의 api를 호출함과 동시에 화면에 변화한 요소를 출력, 출력 이후에 api 호출이 완료되면 다시 업데이트하는 형식)
+
+            new TodoForm({
+        $target,
+        onSubmit: async (content) => {
+            const todo = {
+                content,
+                isCompleted: false
+            }
+            !
+            this.setState({
+                ...this.state,
+                todos: [
+                    ...this.state.todos,
+                    todo
+                ]
+            })
+            !
+            await request(`/${this.state.username}`, {
+                method:'POST',
+                body: JSON.stringify(todo)
+            })
+            await fetchTodo()
+        }
+    })
+
+4) 서버와 통신하는 동안 서버와 통신중임을 알리는 UI적 처리를 한다.
+
+TodoList
+1) 특정 유저의 todo list 불러오기
+2) 추가 및 삭제하기
+3) 클릭 시, 완료처리하거나 완료처리 취소하기
